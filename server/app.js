@@ -33,6 +33,8 @@ app.use(async (ctx, next) => {
 // controller
 app.use(controller());
 
+app.listen(8080);
+
 // error-handling
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
