@@ -6,11 +6,13 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const controller = require('./controller')
+const cors = require('koa2-cors')
 
 // error handler
 onerror(app)
 
 // middlewares
+app.use(cors());
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
 }))
@@ -33,7 +35,7 @@ app.use(async (ctx, next) => {
 // controller
 app.use(controller());
 
-app.listen(8080);
+app.listen(2333);
 
 // error-handling
 app.on('error', (err, ctx) => {

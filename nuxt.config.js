@@ -34,6 +34,15 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  /*
+  ** Server configuration
+  */
+  server: {
+    port: 8080, // default: 3000
+    host: '127.0.0.1', // default: localhost
+  },
+  // other configs
+  
 }
 

@@ -19,15 +19,30 @@
           class="button--grey">GitHub</a>
       </div>
     </div>
+    <button id="btn-test">ajax test</button>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import AppLogo from '~/components/AppLogo.vue';
+import api from '~/fetch/fetch.js';
 
 export default {
   components: {
     AppLogo
+  },
+  mounted() {
+    let btn = document.getElementById('btn-test');
+    btn.addEventListener('click', () => {
+      let data = {
+        name: 'Aya',
+        age: 17,
+        gender: 'female'
+      }
+      api.dotest({params: data}).then(res => {
+        console.log(res);
+      })
+    })
   }
 }
 </script>
