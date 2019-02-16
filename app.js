@@ -26,7 +26,7 @@ const port = process.env.PORT || config.port
 onerror(app)
 
 // middlewares
-app.use(cors());
+// app.use(cors());
 app.use(
   koaBody({
     multipart: true,

@@ -3,9 +3,13 @@
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/css/style.css' />
+    <script src="/fetch/index.js"></script>
   </head>
   <body>
     <h1>{{ title }}</h1>
     <p>Welcome to {{ title }}</p>
+    <button id="ajax-test">Ajax Test!</button>
+    
+    <script src="/js/index.js"></script>
   </body>
 </html>
