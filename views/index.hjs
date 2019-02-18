@@ -2,14 +2,19 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    <link rel='stylesheet' href='/css/style.css' />
+    <meta name="Keywords" content="{{keys}}">
+    <meta name="Description" content="{{desc}}">
+    <link rel='stylesheet' href='/css/reset.css'>
+    <link rel="stylesheet" href="/css/index.css">
     <script src="/fetch/index.js"></script>
   </head>
   <body>
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
-    <button id="ajax-test">Ajax Test!</button>
-    
+    <div class="container"></div>
+    <canvas id="myCanvas">
+        Hey bro, your borswer do not support canvas. Updated it plz.
+    </canvas>
+    <script src="/js/maple.js"></script>
+    <script src="/js/scene.js"></script>
     <script src="/js/index.js"></script>
   </body>
 </html>
