@@ -30,4 +30,6 @@
         }
         canvas.style.background = `rgba(0,0,0,${alpha})`;
     },200);
+
+    
 }());

@@ -2,7 +2,7 @@ let show_index = async (ctx, next) => {
     ctx.state = {
         title: 'Koa2',
         keys: 'ARC',
-        desc: 'Atelier Red Crow'
+        desc: 'Atelier Red Crow',
     }
     await ctx.render('index', ctx.state)
 }
