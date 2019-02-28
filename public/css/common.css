@@ -1,0 +1,80 @@
+/* header */
+.header {
+    margin: 0px auto;
+    width: 100%;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+}
+.header .site-info,
+.header .my-info {
+    height: 100%;
+}
+.header .site-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+.header .site-info .logo {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    flex-shrink: 0;
+}
+.header .site-info .desc {
+    margin-left: 15px;
+}
+.header .my-info {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    position: relative;
+}
+.header .my-info .mini-avatar {
+    width: 50px;
+    height: 50px;
+    background: url('/images/bg.jpg') no-repeat;
+    border-radius: 50%;
+    /* transform: translateX(-200px); */
+}
+.header .my-info .my-info-card {
+    position: absolute;
+    color: #000;
+    background: #fff;
+    width: 240px;
+    height: 300px;
+    right: 0;
+    top: 80px;
+    line-height: 1.3;
+}
+.header .my-info .my-info-card .avatar {
+    width: 150px;
+    height: 150px;
+    margin: 15px auto;
+    background: cyan;
+    border-radius: 50%;
+}
+.header .my-info .my-info-card .my-info-item {
+    margin-left: 10px;
+}
+.header .my-info .my-info-card .my-name {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.header .my-info .my-info-card .iconfont {
+    font-size: 18px;
+    margin-right: 10px;
+}
+.header .my-info .my-info-card .icon-email {
+    color: #16c2c2;
+}
+.header .my-info .my-info-card .icon-weibo {
+    color: #ff8140;
+}
+.header .my-info .my-info-card .icon-bilibili {
+    color: #f45a8d;
+}

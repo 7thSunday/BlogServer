@@ -1,6 +1,51 @@
 window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext;
 var audio = null;
 var isPlaying = false;
+var bgm = document.querySelector(".bgm");
+var bgmMini = document.querySelector(".bgm-mini");
+// pop window
+var popWindow = document.getElementById("pop-window");
+document.getElementById("pw-play").addEventListener("click",()=>{
+    if(audio) return;
+    audio = playBgm();
+    document.querySelector(".icon-pause").style.display = "inline";
+    popWindow.style.display = "none";
+    setAlpha0();
+});
+document.getElementById("pw-cancel").addEventListener("click",()=>{
+    document.querySelector(".icon-play").style.display = "inline";
+    popWindow.style.display = "none";
+    setAlpha0();
+});
+// player controler
+document.getElementById("bgm-ctrl").addEventListener("click", ()=>{
+    if(!audio) {
+        audio = playBgm();
+    };
+    if(isPlaying) {
+        audio.suspend();
+        document.querySelector(".icon-play").style.display = "inline";
+        document.querySelector(".icon-pause").style.display = "none";
+    } else {
+        audio.resume();
+        document.querySelector(".icon-play").style.display = "none";
+        document.querySelector(".icon-pause").style.display = "inline";
+    }
+    isPlaying = !isPlaying;
+});
+// mini player
+bgmMini.onmouseenter = ()=>{
+    bgmMini.style.opacity = 0;
+    bgm.classList.remove("bgm-hide");
+}
+// full player
+bgm.onmouseleave = ()=>{
+    setTimeout(()=>{
+        bgmMini.style.opacity = 1;
+        bgm.classList.add("bgm-hide");
+    },1000);
+}
+// audio context
 function playBgm() {
     try {
         var context = new window.AudioContext();;
@@ -11,22 +56,22 @@ function playBgm() {
             source.buffer = audioBuffer;
             source.loop = true;
             source.connect(context.destination);
-            source.start(0); //立即播放
+            source.start(0); 
             isPlaying = true;
         }
         function initSound(arrayBuffer) {
-            context.decodeAudioData(arrayBuffer, function (buffer) { //解码成功时的回调函数
+            context.decodeAudioData(arrayBuffer, function (buffer) { 
                 audioBuffer = buffer;
                 playSound();
-            }, function (e) { //解码出错时的回调函数
+            }, function (e) { 
                 console.log('Error decoding file', e);
             });
         }
         function loadAudioFile(url) {
-            var xhr = new XMLHttpRequest(); //通过XHR下载音频文件
+            var xhr = new XMLHttpRequest(); 
             xhr.open('GET', url, true);
             xhr.responseType = 'arraybuffer';
-            xhr.onload = function (e) { //下载完成
+            xhr.onload = function (e) { 
                 initSound(this.response);
             };
             xhr.send();
@@ -37,24 +82,13 @@ function playBgm() {
     }
     return context;
 } 
-
-// pop window
-let popWindow = document.getElementById("pop-window");
-document.getElementById("pw-play").addEventListener("click",()=>{
-    if(audio) return;
-    audio = playBgm();
-    popWindow.style.display = "none";
-});
-document.getElementById("pw-cancel").addEventListener("click",()=>{
-    popWindow.style.display = "none";
-});
-// player controler
-document.getElementById("bgm").addEventListener("click", ()=>{
-    if(!audio) return
-    if(isPlaying) {
-        audio.suspend();
-    } else {
-        audio.resume();
-    }
-    isPlaying = !isPlaying;
-})
+// add alpha=0 css class
+function setAlpha0() {
+    setTimeout(()=>{
+        document.querySelector("#bgm-ctrl").classList.add("alpha0");
+    },2000);
+    setTimeout(()=>{
+        bgm.classList.add("bgm-hide");
+        bgmMini.style.opacity = 1;
+    },2300)
+}

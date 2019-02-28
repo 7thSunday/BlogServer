@@ -1,0 +1,67 @@
+.bgm-mini {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    color: #fff;
+    z-index: 2;
+    width: 270px;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    transition: 300ms;
+    opacity: 0;
+}
+.bgm {
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    z-index: 3;
+    width: 270px;
+    display: flex;
+    border: 1px solid #fff;
+    transition-duration: 500ms;
+}
+.bgm-hide {
+    bottom: -90px;
+}
+.bgm-cover {
+    width: 30%;
+    position: relative;
+    font-size: 0;
+}
+.bgm-cover .iconfont {
+    font-size: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+.bgm-cover img {
+    width: 100%;
+}
+#bgm-ctrl {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 300ms;
+}
+.bgm-info {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.alpha0 {
+    opacity: 0;
+}
+.alpha0:hover {
+    opacity: 1;
+}
