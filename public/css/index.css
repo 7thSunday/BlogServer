@@ -1,13 +1,3 @@
-body,html {
-    width: 100%;
-    height: 100%;
-    user-select: none;
-}
-body {
-    background: url("/images/bg.jpg") repeat fixed;
-    color: #fff;
-    /* color: #b994cb; */
-}
 /* pop window */
 #pop-window {
     top: 0;

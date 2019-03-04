@@ -72,11 +72,11 @@ class Scene {
     // set amount
     setAmount() {
         if(this.devWidth>=1600) {
-            this.count = 50;
+            this.count = 15;
         }else if(this.devWidth>=1024) {
-            this.count = 30;
+            this.count = 9;
         }else if(this.devWidth>=768) {
-            this.count = 20;
+            this.count = 5;
         }
     }
 }
