@@ -4,18 +4,24 @@ body,html {
     user-select: none;
 }
 body {
-    background: url("/images/bg.jpg") repeat fixed;
+    background: url("/img/bg.jpg") repeat fixed;
     color: #fff;
     /* color: #b994cb; */
+}
+.container {
+    width: 100%;
 }
 /* header */
 .header {
     margin: 0px auto;
     width: 100%;
     height: 80px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .header .site-info,
 .header .my-info {
@@ -47,7 +53,7 @@ body {
     cursor: pointer;
     width: 50px;
     height: 50px;
-    background: url('/images/bg.jpg') no-repeat;
+    background: url('/img/bg.jpg') no-repeat;
     border-radius: 50%;
     transition: 500ms;
 }
@@ -113,4 +119,14 @@ body {
     border-bottom: 20px solid #fff;
     margin: 0 auto;
     margin-top: -40px;
+}
+/* footer */
+.footer {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
 }

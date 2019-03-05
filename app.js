@@ -43,6 +43,7 @@ app.use(
 app.use(json());
 app.use(logger());
 app.use(require("koa-static")(__dirname + "/public"));
+app.use(require("koa-static")(__dirname + "/static"));
 
 app.use(views(path.join(__dirname, '/views'), {
     options: {settings: {views: path.join(__dirname, 'views')}},

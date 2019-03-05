@@ -51,10 +51,18 @@
         {{!-- side bar --}}
         <div class="side-bar"></div>
         {{!-- main content --}}
-        <div class="main-content"></div>
+        <div class="main-content">
+          <div class="img">
+            <img src="/img/bg.jpg" alt="test">
+          </div>
+        </div>
       </div>
       {{!-- footer --}}
-      <div class="footer"></div>
+      <div class="footer">
+        <span>&copy;</span>
+        <span>Copyright&nbsp; 2019 &nbsp; </span>
+        <span>Atelier Red Crow</span>   
+      </div>
     </div>
     {{!-- bgm controler --}}
     <div class="bgm-mini clear_fix">

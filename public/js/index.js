@@ -11,11 +11,10 @@
 // }
 (function(){
     // run maple background
-    let src = ["/images/sample01.png","/images/sample02.png"];
+    let src = ["/img/sample01.png","/img/sample02.png"];
     let scene = new Scene("myCanvas",src);
     scene.init();
     let canvas = document.getElementById("myCanvas");
-    canvas.style.background = "rgba(0,0,0,0.6)";
     // let alpha = 0.6;
     // let bool = true;
     // setInterval( ()=> {

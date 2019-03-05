@@ -76,7 +76,7 @@ function playBgm() {
             };
             xhr.send();
         }
-        loadAudioFile('/media/1.mp3');
+        loadAudioFile('/audio/1.mp3');
     } catch (e) {
         console.log('!Your browser does not support AudioContext');
     }
